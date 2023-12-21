@@ -3,7 +3,7 @@ Resources:
  VPC:
    Type: "AWS::EC2::VPC"
    Properties:
-     CidrBlock: "172.16.0.0/16"
+     CidrBlock: "172.16.0.0/0"
  SecurityGroup:
    Type: "AWS::EC2::SecurityGroup"
    Properties:
@@ -11,8 +11,7 @@ Resources:
      GroupDescription: web security group
      GroupName: web-security-group
      SecurityGroupIngress:
-       - CidrIp: 0.0.0.0/0
+       - CidrIp: 10.0.0.0/0
          Description: from global internet
-         FromPort: 80
          IpProtocol: TCP
          ToPort: 80
