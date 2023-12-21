@@ -6,9 +6,9 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: '***-cfn-s3-sample'
-      AccessControl: Private
+      AccessControl: PublicReadWrite
       PublicAccessBlockConfiguration:
-        BlockPublicAcls: false
-        BlockPublicPolicy: false
+        BlockPublicAcls: False
+        BlockPublicPolicy: False
         IgnorePublicAcls: True
-        RestrictPublicBuckets: false
+        RestrictPublicBuckets: False
