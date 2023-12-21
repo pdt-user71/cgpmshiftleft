@@ -1,0 +1,13 @@
+jbk:
+-oraclejdk8
+deploy:
+ provider: s3
+ access_key_id: AKIAIEBRQC6XJRYKOXZ
+ secret_access_key:
+    secure: AeWLCQuseredgjoigfgjaorigjosgiugaraDJOFF9
+ bucket: dorop-zone
+ skip_cleanup: true
+
+
+
+
