@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Main template for VPC
+
+Resources:
+    CFnVPC:
+        Type: AWS::EC2::VPC
+        Properties:
+            CidrBlock: 10.0.0.0/16
+            Tags:
+                - Key: Name
+                  Value: CFnVPC
+
+Outputs:
+    VPCID:
+        Description: VPC ID
+        Value: !Ref CFnVPC
+        Export:
+            Name: !Sub ${AWS::StackName}-VPCID
