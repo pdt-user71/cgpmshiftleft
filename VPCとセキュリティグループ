@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+ VPC:
+   Type: "AWS::EC2::VPC"
+   Properties:
+     CidrBlock: "172.16.0.0/16"
+ SecurityGroup:
+   Type: "AWS::EC2::SecurityGroup"
+   Properties:
+     VpcId: !Ref VPC
+     GroupDescription: web security group
+     GroupName: web-security-group
+     SecurityGroupIngress:
+       - CidrIp: 0.0.0.0/0
+         Description: from global internet
+         FromPort: 80
+         IpProtocol: TCP
+         ToPort: 80
